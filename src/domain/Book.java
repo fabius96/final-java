@@ -2,6 +2,7 @@ package domain;
 
 // 책
 public class Book implements Comparable<Book> {
+    private int id; // PK
     private String title; // 제목
     private final String releaseDate; // 출간일
     private boolean returnStatus; // 반납여부
