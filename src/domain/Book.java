@@ -1,7 +1,11 @@
 package domain;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 // 책
 public class Book implements Comparable<Book> {
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+
     private int id; // PK
     private String title; // 제목
     private final String releaseDate; // 출간일
@@ -9,6 +13,7 @@ public class Book implements Comparable<Book> {
 
     // 생성자 메소드(도서 등록)
     public Book(String title, String releaseDate) {
+        this.id = ID_GENERATOR.getAndIncrement();
         this.title = title;
         this.releaseDate = releaseDate;
         this.returnStatus = true;
