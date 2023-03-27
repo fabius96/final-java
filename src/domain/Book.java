@@ -30,6 +30,14 @@ public class Book implements Comparable<Book> {
         return title;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
