@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import domain.Book;
 import domain.Loan;
 import domain.Member;
@@ -82,12 +83,13 @@ public class CSVReader {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] bookData = line.split(",");
 
-                String title = bookData[0];
-                String releaseDate = bookData[1];
-                boolean returnStatus = Boolean.parseBoolean(bookData[2]);
+                int id = Integer.parseInt(bookData[0]);
+                String title = bookData[1];
+                String releaseDate = bookData[2];
+                boolean returnStatus = Boolean.parseBoolean(bookData[3]);
 
                 if (returnStatus) {
-                    Book book = new Book(title, releaseDate, returnStatus);
+                    Book book = new Book(id, title, releaseDate, returnStatus);
                     books.add(book);
                 }
             }
@@ -126,11 +128,12 @@ public class CSVReader {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] bookData = line.split(",");
 
-                String title = bookData[0];
-                String releaseDate = bookData[1];
-                boolean returnStatus = Boolean.parseBoolean(bookData[2]);
+                int id = Integer.parseInt(bookData[0]);
+                String title = bookData[1];
+                String releaseDate = bookData[2];
+                boolean returnStatus = Boolean.parseBoolean(bookData[3]);
 
-                Book book = new Book(title, releaseDate, returnStatus);
+                Book book = new Book(id, title, releaseDate, returnStatus);
                 books.add(book);
             }
         } catch (Exception e) {
@@ -193,6 +196,7 @@ public class CSVReader {
 
     /**
      * 단일 회원 조회 메소드
+     *
      * @param memberName
      * @return
      */
@@ -222,7 +226,8 @@ public class CSVReader {
                 String address = memberData[2];
                 String phoneNumber = memberData[3];
                 String birthday = memberData[4];
-                String age = memberData[5];;
+                String age = memberData[5];
+                ;
 
                 member = new Member(name, signUpDay, address, phoneNumber, birthday, age);
             }

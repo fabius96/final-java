@@ -19,7 +19,8 @@ public class Book implements Comparable<Book> {
         this.returnStatus = true;
     }
 
-    public Book(String title, String releaseDate, boolean returnStatus) {
+    public Book(int id, String title, String releaseDate, boolean returnStatus) {
+        this.id = id;
         this.title = title;
         this.releaseDate = releaseDate;
         this.returnStatus = returnStatus;

@@ -12,6 +12,7 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.util.ArrayList;
 import java.util.Collections;
+
 import domain.Book;
 import domain.Loan;
 import domain.Member;
@@ -34,11 +35,11 @@ public class CSVWriter {
                     new OutputStreamWriter(new FileOutputStream("book.csv", true), "EUC-KR"));
 
             if (!isFileExists) {
-                bufferedWriter.write("제목,출간일,반납여부");
+                bufferedWriter.write("id,제목,출간일,반납여부");
                 bufferedWriter.write(NEWLINE);
             }
 
-            bufferedWriter.write(
+            bufferedWriter.write(book.getId() + "," +
                     book.getTitle() + "," + book.getReleaseDate() + "," + book.isReturnStatus());
 
             bufferedWriter.write(NEWLINE);
@@ -111,9 +112,6 @@ public class CSVWriter {
 
     /**
      * 대출 연장 메소드
-     *
-     * @param bookTitle
-     * @param extensionStatus
      */
     public void loanExtention(String bookTitle) {
         File inputFile = new File("loan.csv");
@@ -168,9 +166,6 @@ public class CSVWriter {
 
     /**
      * 회원 삭제 메소드
-     *
-     * @param bookName
-     * @param extensionStatus
      */
     public void updateCSV(String memberName) {
         File inputFile = new File("member.csv");
