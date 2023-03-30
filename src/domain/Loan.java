@@ -1,11 +1,14 @@
 package domain;
 
 import java.time.LocalDate;
+import java.util.concurrent.atomic.AtomicInteger;
+
 import view.MainView;
 
 // 대출정보
 public class Loan implements Comparable<Loan> {
-    // ------ 추후 DB 연결 시 id(FK)값으로 리팩터링 필요 ------//
+    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private int id; // PK
     private String bookTitle; // 도서명
     // ------ 추후 DB 연결 시 id(FK)값으로 리팩터링 필요 ------//
     private String memberName; // 회원명
@@ -16,6 +19,7 @@ public class Loan implements Comparable<Loan> {
 
     // 생성자 메소드(도서 대출)
     public Loan(String bookName, String memberName) {
+        this.id = ID_GENERATOR.getAndIncrement();
         this.bookTitle = bookName;
         this.memberName = memberName;
         this.extensionStatus = false;
@@ -25,6 +29,7 @@ public class Loan implements Comparable<Loan> {
 
     public Loan(String bookName, String memberName, boolean extensionStatus, String loanDate,
                 String deadline) {
+        this.id = id;
         this.bookTitle = bookName;
         this.memberName = memberName;
         this.extensionStatus = extensionStatus;
@@ -33,6 +38,15 @@ public class Loan implements Comparable<Loan> {
     }
 
     // getter / setter
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getBookTitle() {
         return bookTitle;
     }
@@ -75,7 +89,7 @@ public class Loan implements Comparable<Loan> {
 
     @Override
     public String toString() {
-        return "대출 현황 [도서명 : " + bookTitle + ", 회원명 : " + memberName + ", 연장여부 : "
+        return "대출 현황 [번호 : " + id + ", 제목 : " + bookTitle + ", 회원명 : " + memberName + ", 연장여부 : "
                 + extensionStatus + ", 대출일: " + loanDate + ", 반납기한 : " + deadline + "]";
     }
 

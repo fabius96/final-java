@@ -10,8 +10,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.ArrayList;
-import java.util.Collections;
 
 import domain.Book;
 import domain.Loan;
@@ -98,7 +96,7 @@ public class CSVWriter {
                 bufferedWriter.write(NEWLINE);
             }
 
-            bufferedWriter.write(loan.getBookTitle() + "," + loan.getMemberName() + ","
+            bufferedWriter.write(loan.getId() + "," + loan.getBookTitle() + "," + loan.getMemberName() + ","
                     + loan.isExtensionStatus() + "," + loan.getLoanDate() + ","
                     + loan.getDeadline());
 
@@ -131,10 +129,10 @@ public class CSVWriter {
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
                 // 수정하고자 하는 도서의 정보인 경우
-                if (fields[0].equals(bookTitle) && !Boolean.parseBoolean(fields[2])) {
+                if (fields[1].equals(bookTitle) && !Boolean.parseBoolean(fields[3])) {
                     // 새로운 정보로 수정
-                    fields[2] = "TRUE";
-                    fields[4] = String.valueOf(Integer.parseInt(fields[4]) + 6);
+                    fields[3] = "TRUE";
+                    fields[5] = String.valueOf(Integer.parseInt(fields[4]) + 6);
                     // 새로운 정보를 csv 형식으로 작성하여 파일에 저장
                     writer.write(String.join(",", fields));
                     writer.write(NEWLINE);
@@ -287,7 +285,7 @@ public class CSVWriter {
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
                 // 반납하고자 하는 도서인 경우
-                if (fields[0].equals(bookTitle)) {
+                if (fields[1].equals(bookTitle)) {
                     continue;
                 } else {
                     // 수정하지 않는 대출 정보는 그대로 유지하여 파일에 저장
@@ -338,15 +336,15 @@ public class CSVWriter {
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
                 // 수정하고자 하는 도서의 정보인 경우
-                if (fields[0].equals(bookTitle) && !Boolean.parseBoolean(fields[2])) {
+                if (fields[1].equals(bookTitle) && !Boolean.parseBoolean(fields[3])) {
                     // 새로운 정보로 수정
-                    fields[2] = "TRUE";
+                    fields[3] = "TRUE";
                     // 새로운 정보를 csv 형식으로 작성하여 파일에 저장
                     writer.write(String.join(",", fields));
                     writer.write(NEWLINE);
-                } else if (fields[0].equals(bookTitle) && Boolean.parseBoolean(fields[2])) {
+                } else if (fields[1].equals(bookTitle) && Boolean.parseBoolean(fields[3])) {
                     // 새로운 정보로 수정
-                    fields[2] = "FALSE";
+                    fields[3] = "FALSE";
                     // 새로운 정보를 csv 형식으로 작성하여 파일에 저장
                     writer.write(String.join(",", fields));
                     writer.write(NEWLINE);

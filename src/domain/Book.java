@@ -57,7 +57,7 @@ public class Book implements Comparable<Book> {
 
     @Override
     public String toString() {
-        return "도서목록 [제목 : " + title + ", 출간일 : " + releaseDate + ", 반납여부 : "
+        return "도서목록 [서적번호 : " + id + ", 제목 : " + title + ", 출간일 : " + releaseDate + ", 반납여부 : "
                 + returnStatus + "]";
     }
 

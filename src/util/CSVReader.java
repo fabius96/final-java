@@ -37,11 +37,12 @@ public class CSVReader {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] loanData = line.split(",");
 
-                String bookName = loanData[0];
-                String memberName = loanData[1];
-                boolean extensionStatus = Boolean.parseBoolean(loanData[2]);
-                String loanDate = loanData[3];
-                String deadline = loanData[4];
+                int id = Integer.parseInt(loanData[0]);
+                String bookName = loanData[1];
+                String memberName = loanData[2];
+                boolean extensionStatus = Boolean.parseBoolean(loanData[3]);
+                String loanDate = loanData[4];
+                String deadline = loanData[5];
 
                 Loan loan = new Loan(bookName, memberName, extensionStatus, loanDate,
                         deadline);
