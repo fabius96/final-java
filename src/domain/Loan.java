@@ -27,7 +27,7 @@ public class Loan implements Comparable<Loan> {
         this.deadline = String.valueOf(13);
     }
 
-    public Loan(String bookName, String memberName, boolean extensionStatus, String loanDate,
+    public Loan(int id, String bookName, String memberName, boolean extensionStatus, String loanDate,
                 String deadline) {
         this.id = id;
         this.bookTitle = bookName;

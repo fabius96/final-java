@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77d303f4-a737-4212-889f-a878ed486c8f" name="변경" comment="최종 과제 제출&#10;&#10;domain 패키지 - Book, Loan, Member 클래스 / service 패키지 - BookService, LoanService, MemberService / util 패키지 - CSVReader, CSVWriter / view 패키지 - BookView, LoanView, MainView, MemberView">
+    <list default="true" id="77d303f4-a737-4212-889f-a878ed486c8f" name="변경" comment="Book, Loan, CSVReader, CSVWriter 수정&#10;&#10;Book 및 Loan 클래스 id 필드 추가에 따른 일부 메소드 수정">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +31,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="MainView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.MainView" />
@@ -73,7 +73,42 @@
       <option name="project" value="LOCAL" />
       <updated>1679617304238</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Book 클래서 id 필드 추가&#10;&#10;(추후 DB 연결 시 PK로 활용 위함)">
+      <created>1679710204418</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679710204418</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Book 클래스 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 변경사항 추가">
+      <created>1679794764899</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679794764899</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Book 클래스 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 getter/setter 추가">
+      <created>1679884239724</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679884239724</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Book, CSVReader, CSVWriter 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 CSVWriter의 도서 등록 메소드, CSVReader의 전체 도서 조회, 대출 가능 도서 조회 메소드 수정">
+      <created>1679961010549</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679961010549</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Book, Loan, CSVReader, CSVWriter 수정&#10;&#10;Book 및 Loan 클래스 id 필드 추가에 따른 일부 메소드 수정">
+      <created>1680134437524</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680134437524</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +124,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="최종 과제 제출&#10;&#10;domain 패키지 - Book, Loan, Member 클래스 / service 패키지 - BookService, LoanService, MemberService / util 패키지 - CSVReader, CSVWriter / view 패키지 - BookView, LoanView, MainView, MemberView" />
-    <option name="LAST_COMMIT_MESSAGE" value="최종 과제 제출&#10;&#10;domain 패키지 - Book, Loan, Member 클래스 / service 패키지 - BookService, LoanService, MemberService / util 패키지 - CSVReader, CSVWriter / view 패키지 - BookView, LoanView, MainView, MemberView" />
+    <MESSAGE value="Book 클래서 id 필드 추가&#10;&#10;(추후 DB 연결 시 PK로 활용 위함)" />
+    <MESSAGE value="Book 클래스 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 변경사항 추가" />
+    <MESSAGE value="Book 클래스 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 getter/setter 추가" />
+    <MESSAGE value="Book, CSVReader, CSVWriter 수정&#10;&#10;Book 클래스 id 필드 추가에 따른 CSVWriter의 도서 등록 메소드, CSVReader의 전체 도서 조회, 대출 가능 도서 조회 메소드 수정" />
+    <MESSAGE value="Book, Loan, CSVReader, CSVWriter 수정&#10;&#10;Book 및 Loan 클래스 id 필드 추가에 따른 일부 메소드 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Book, Loan, CSVReader, CSVWriter 수정&#10;&#10;Book 및 Loan 클래스 id 필드 추가에 따른 일부 메소드 수정" />
   </component>
 </project>

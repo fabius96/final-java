@@ -44,7 +44,7 @@ public class CSVReader {
                 String loanDate = loanData[4];
                 String deadline = loanData[5];
 
-                Loan loan = new Loan(bookName, memberName, extensionStatus, loanDate,
+                Loan loan = new Loan(id, bookName, memberName, extensionStatus, loanDate,
                         deadline);
                 loans.add(loan);
             }
