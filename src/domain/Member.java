@@ -97,7 +97,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "회원정보 [이름 : " + name + ", 가입일 : " + signUpDay + ", 주소 : " + address + ", 연락처 : "
+        return "회원정보 [번호 : " + id + ", 이름 :"  +name + ", 가입일 : " + signUpDay + ", 주소 : " + address + ", 연락처 : "
                 + phoneNumber + ", 생일 : " + birthday + ", 나이 : " + age + "]";
     }
 
