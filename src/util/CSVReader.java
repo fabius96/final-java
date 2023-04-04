@@ -173,14 +173,15 @@ public class CSVReader {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] memberData = line.split(",");
 
-                String name = memberData[0];
-                String signUpDay = memberData[1];
-                String address = memberData[2];
-                String phoneNumber = memberData[3];
-                String birthday = memberData[4];
-                String age = memberData[5];
+                int id = Integer.parseInt(memberData[0]);
+                String name = memberData[1];
+                String signUpDay = memberData[2];
+                String address = memberData[3];
+                String phoneNumber = memberData[4];
+                String birthday = memberData[5];
+                String age = memberData[6];
 
-                Member member = new Member(name, signUpDay, address, phoneNumber, birthday, age);
+                Member member = new Member(id, name, signUpDay, address, phoneNumber, birthday, age);
                 members.add(member);
             }
         } catch (Exception e) {
@@ -222,15 +223,17 @@ public class CSVReader {
                 if (!memberData[0].equals(memberName)) {
                     continue;
                 }
-                String name = memberData[0];
-                String signUpDay = memberData[1];
-                String address = memberData[2];
-                String phoneNumber = memberData[3];
-                String birthday = memberData[4];
-                String age = memberData[5];
+
+                int id = Integer.parseInt(memberData[0]);
+                String name = memberData[1];
+                String signUpDay = memberData[2];
+                String address = memberData[3];
+                String phoneNumber = memberData[4];
+                String birthday = memberData[5];
+                String age = memberData[6];
                 ;
 
-                member = new Member(name, signUpDay, address, phoneNumber, birthday, age);
+                member = new Member(id, name, signUpDay, address, phoneNumber, birthday, age);
             }
         } catch (Exception e) {
             e.printStackTrace();

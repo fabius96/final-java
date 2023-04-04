@@ -8,7 +8,7 @@ import view.MainView;
 
 // 회원
 public class Member {
-    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
     private int id;
     private String name; // 이름
     private final String signUpDay; // 가입날짜
@@ -29,8 +29,9 @@ public class Member {
                 .getYears() * -1);
     }
 
-    public Member(String name, String signUpDay, String address, String phoneNumber,
+    public Member(int id, String name, String signUpDay, String address, String phoneNumber,
                   String birthday, String age) {
+        this.id = id;
         this.name = name;
         this.signUpDay = signUpDay;
         this.address = address;
