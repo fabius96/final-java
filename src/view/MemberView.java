@@ -78,12 +78,12 @@ public class MemberView {
                     memberService.inquiryMemberList();
                     System.out.println(
                             "--------------------------------------------------------------------------------------------------");
-                    System.out.println("삭제할 회원의 이름을 입력해주세요.");
+                    System.out.println("삭제할 회원의 ID을 입력해주세요.");
                     userInput = scanner.nextLine();
                     member = memberService.createTemporaryMember(userInput);
                     memberService.deleteMember(userInput);
                     break;
-                case ("5"): // 삭제취소 - 미구현
+                case ("5"): // 삭제취소
                     if (deletedMember == null) {
                         System.out.println("최근 삭제된 회원 데이터가 없습니다.");
                         break;

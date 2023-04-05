@@ -165,7 +165,7 @@ public class CSVWriter {
     /**
      * 회원 삭제 메소드
      */
-    public void updateCSV(String memberName) {
+    public void updateCSV(String memberId) {
         File inputFile = new File("member.csv");
         File tempFile = new File("temp.csv");
 
@@ -182,11 +182,11 @@ public class CSVWriter {
 
             while ((line = reader.readLine()) != null) {
                 String[] fields = line.split(",");
-                // 수정하고자 하는 도서의 정보인 경우
-                if (fields[0].equals(memberName)) {
+                // 삭제하고자 하는 회원의 ID와 일치하는 경우
+                if (fields[0].equals(memberId)) {
                     continue;
                 } else {
-                    // 수정하지 않는 도서 정보는 그대로 유지하여 파일에 저장
+                    // 삭제하지 않는 회원 정보는 그대로 유지
                     writer.write(line);
                     writer.write(NEWLINE);
                 }

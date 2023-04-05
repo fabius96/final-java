@@ -38,10 +38,10 @@ public class MemberService {
     /**
      * 회원 삭제 메소드
      *
-     * @param memberName
+     * @param memberId
      */
-    public void deleteMember(String memberName) {
-        csvWriter.updateCSV(memberName);
+    public void deleteMember(String memberId) {
+        csvWriter.updateCSV(memberId);
         System.out.println("회원삭제가 완료되었습니다.");
     }
 
