@@ -80,7 +80,7 @@ public class MemberView {
                             "--------------------------------------------------------------------------------------------------");
                     System.out.println("삭제할 회원의 ID을 입력해주세요.");
                     userInput = scanner.nextLine();
-                    member = memberService.createTemporaryMember(userInput);
+                    deletedMember = memberService.createTemporaryMember(userInput);
                     memberService.deleteMember(userInput);
                     break;
                 case ("5"): // 삭제취소
