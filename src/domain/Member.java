@@ -9,7 +9,7 @@ import view.MainView;
 // 회원
 public class Member {
     private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
-    private int id;
+    private String id;
     private String name; // 이름
     private final String signUpDay; // 가입날짜
     private String address; // 주소
@@ -18,8 +18,8 @@ public class Member {
     private String age; // 생일
 
     // 생성자 메소드(회원 가입)
-    public Member(String name, String address, String phoneNumber, String birthday) {
-        this.id = ID_GENERATOR.incrementAndGet();
+    public Member(String id, String name, String address, String phoneNumber, String birthday) {
+        this.id = id;
         this.name = name;
         this.signUpDay = LocalDate.now().format(MainView.formatter);
         this.address = address;
@@ -29,7 +29,7 @@ public class Member {
                 .getYears() * -1);
     }
 
-    public Member(int id, String name, String signUpDay, String address, String phoneNumber,
+    public Member(String id, String name, String signUpDay, String address, String phoneNumber,
                   String birthday, String age) {
         this.id = id;
         this.name = name;
@@ -43,11 +43,11 @@ public class Member {
 
     // getter / setter
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -98,7 +98,7 @@ public class Member {
 
     @Override
     public String toString() {
-        return "회원정보 [번호 : " + id + ", 이름 :"  +name + ", 가입일 : " + signUpDay + ", 주소 : " + address + ", 연락처 : "
+        return "회원정보 [ID : " + id + ", 이름 :"  +name + ", 가입일 : " + signUpDay + ", 주소 : " + address + ", 연락처 : "
                 + phoneNumber + ", 생일 : " + birthday + ", 나이 : " + age + "]";
     }
 

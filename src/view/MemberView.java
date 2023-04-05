@@ -24,6 +24,10 @@ public class MemberView {
                     memberService.inquiryMemberList();
                     break;
                 case ("2"): // 회원등록
+                    System.out.println("ID을 입력해주세요");
+                    userInput = scanner.nextLine();
+                    String id = userInput;
+
                     System.out.println("이름을 입력해주세요");
                     userInput = scanner.nextLine();
                     String name = userInput;
@@ -40,14 +44,14 @@ public class MemberView {
                     userInput = scanner.nextLine();
                     String birthday = userInput;
 
-                    Member member = new Member(name, address, phoneNumber, birthday);
+                    Member member = new Member(id, name, address, phoneNumber, birthday);
                     memberService.memberRegistration(member);
                     break;
-                case ("3"): // 회원수정 - 미구현
+                case ("3"):
                     memberService.inquiryMemberList();
                     System.out.println(
                             "--------------------------------------------------------------------------------------------------");
-                    System.out.println("정보를 수정할 회원의 이름을 입력해주세요");
+                    System.out.println("정보를 수정할 회원의 번호를 입력해주세요");
                     String origin = scanner.nextLine();
                     memberService.inquirySingleMember(origin);
                     System.out.println(

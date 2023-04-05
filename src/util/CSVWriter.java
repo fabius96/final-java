@@ -62,7 +62,7 @@ public class CSVWriter {
                     new OutputStreamWriter(new FileOutputStream("member.csv", true), "EUC-KR"));
 
             if (!isFileExists) {
-                bufferedWriter.write("번호,이름,가입일,주소,연락처,생일,나이");
+                bufferedWriter.write("ID,이름,가입일,주소,연락처,생일,나이");
                 bufferedWriter.write(NEWLINE);
             }
 

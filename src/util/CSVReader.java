@@ -173,7 +173,7 @@ public class CSVReader {
             while ((line = bufferedReader.readLine()) != null) {
                 String[] memberData = line.split(",");
 
-                int id = Integer.parseInt(memberData[0]);
+                String id = memberData[0];
                 String name = memberData[1];
                 String signUpDay = memberData[2];
                 String address = memberData[3];
@@ -224,7 +224,7 @@ public class CSVReader {
                     continue;
                 }
 
-                int id = Integer.parseInt(memberData[0]);
+                String id = memberData[0];
                 String name = memberData[1];
                 String signUpDay = memberData[2];
                 String address = memberData[3];
