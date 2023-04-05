@@ -19,7 +19,7 @@ public class Loan implements Comparable<Loan> {
 
     // 생성자 메소드(도서 대출)
     public Loan(String bookName, String memberName) {
-        this.id = ID_GENERATOR.getAndIncrement();
+        this.id = ID_GENERATOR.incrementAndGet();
         this.bookTitle = bookName;
         this.memberName = memberName;
         this.extensionStatus = false;

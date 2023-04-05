@@ -19,7 +19,7 @@ public class Member {
 
     // 생성자 메소드(회원 가입)
     public Member(String name, String address, String phoneNumber, String birthday) {
-        this.id = ID_GENERATOR.getAndIncrement();
+        this.id = ID_GENERATOR.incrementAndGet();
         this.name = name;
         this.signUpDay = LocalDate.now().format(MainView.formatter);
         this.address = address;

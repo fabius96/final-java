@@ -13,7 +13,7 @@ public class Book implements Comparable<Book> {
 
     // 생성자 메소드(도서 등록)
     public Book(String title, String releaseDate) {
-        this.id = ID_GENERATOR.getAndIncrement();
+        this.id = ID_GENERATOR.incrementAndGet();
         this.title = title;
         this.releaseDate = releaseDate;
         this.returnStatus = true;
