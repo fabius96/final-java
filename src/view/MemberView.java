@@ -51,9 +51,9 @@ public class MemberView {
                     memberService.inquiryMemberList();
                     System.out.println(
                             "--------------------------------------------------------------------------------------------------");
-                    System.out.println("정보를 수정할 회원의 번호를 입력해주세요");
-                    String origin = scanner.nextLine();
-                    memberService.inquirySingleMember(origin);
+                    System.out.println("정보를 수정할 회원의 ID를 입력해주세요");
+                    String originId = scanner.nextLine();
+                    memberService.inquirySingleMember(originId);
                     System.out.println(
                             "--------------------------------------------------------------------------------------------------");
                     System.out.println("변경될 이름을 입력해주세요");
@@ -71,7 +71,7 @@ public class MemberView {
                     System.out.println("변경될 생일을 입력해주세요 \t (입력예시 : 1996/05/11)");
                     userInput = scanner.nextLine();
                     birthday = userInput;
-                    memberService.changeMemberinformation(origin, name, address, phoneNumber,
+                    memberService.changeMemberinformation(originId, name, address, phoneNumber,
                             birthday);
                     break;
                 case ("4"): // 회원삭제

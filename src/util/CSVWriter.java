@@ -374,6 +374,14 @@ public class CSVWriter {
         tempFile.renameTo(inputFile);
     }
 
+    /**
+     * 회원 수정 메소드
+     * @param
+     * @param name
+     * @param address
+     * @param phoneNumber
+     * @param birthday
+     */
     public void changeMemberInformation(String userInput, String name, String address, String phoneNumber, String birthday) {
         File inputFile = new File("member.csv");
         File tempFile = new File("temp.csv");
@@ -395,11 +403,11 @@ public class CSVWriter {
                 if (fields[0].equals(userInput)) {
 
                     // 새로운 정보로 수정
-                    fields[0] = name;
-                    fields[2] = address;
-                    fields[3] = phoneNumber;
-                    fields[4] = birthday;
-                    fields[5] = String.valueOf(Period.between(LocalDate.now(), LocalDate.parse(birthday, MainView.formatter))
+                    fields[1] = name;
+                    fields[3] = address;
+                    fields[4] = phoneNumber;
+                    fields[5] = birthday;
+                    fields[6] = String.valueOf(Period.between(LocalDate.now(), LocalDate.parse(birthday, MainView.formatter))
                             .getYears() * -1);
                     // 새로운 정보를 csv 형식으로 작성하여 파일에 저장
                     writer.write(String.join(",", fields));
