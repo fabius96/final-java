@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 // 책
 public class Book implements Comparable<Book> {
-    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
 
     private int id; // PK
     private String title; // 제목
@@ -57,7 +57,7 @@ public class Book implements Comparable<Book> {
 
     @Override
     public String toString() {
-        return "도서목록 [서적번호 : " + id + ", 제목 : " + title + ", 출간일 : " + releaseDate + ", 반납여부 : "
+        return "도서목록 [번호 : " + id + ", 제목 : " + title + ", 출간일 : " + releaseDate + ", 반납여부 : "
                 + returnStatus + "]";
     }
 

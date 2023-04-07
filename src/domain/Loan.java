@@ -7,10 +7,10 @@ import view.MainView;
 
 // 대출정보
 public class Loan implements Comparable<Loan> {
-    private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+    private static final AtomicInteger ID_GENERATOR = new AtomicInteger(0);
     private int id; // PK
     private String bookTitle; // 도서명
-    // ------ 추후 DB 연결 시 id(FK)값으로 리팩터링 필요 ------//
+
     private String memberName; // 회원명
 
     private boolean extensionStatus; // 연장여부
