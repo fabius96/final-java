@@ -92,7 +92,7 @@ public class CSVWriter {
                     new OutputStreamWriter(new FileOutputStream("loan.csv", true), "EUC-KR"));
 
             if (!isFileExists) {
-                bufferedWriter.write("도서명,회원명,연장여부,대출일,반납기한");
+                bufferedWriter.write("번호,도서명,회원명,연장여부,대출일,반납기한");
                 bufferedWriter.write(NEWLINE);
             }
 
@@ -132,7 +132,7 @@ public class CSVWriter {
                 if (fields[1].equals(bookTitle) && !Boolean.parseBoolean(fields[3])) {
                     // 새로운 정보로 수정
                     fields[3] = "TRUE";
-                    fields[5] = String.valueOf(Integer.parseInt(fields[4]) + 6);
+                    fields[5] = String.valueOf(Integer.parseInt(fields[5]) + 6);
                     // 새로운 정보를 csv 형식으로 작성하여 파일에 저장
                     writer.write(String.join(",", fields));
                     writer.write(NEWLINE);
