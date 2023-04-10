@@ -246,4 +246,43 @@ public class CSVReader {
         }
         return member;
     }
+
+    /**
+     * 회원 ID 중복 확인 메소드
+     * @return
+     */
+    public ArrayList<String> makeIdList() {
+        ArrayList<String> idList = new ArrayList<>();
+        BufferedReader bufferedReader = null;
+
+        /* csv 파일이 없을 경우의 예외처리 */
+        if (!new File("member.csv").exists()) {
+            throw new IllegalArgumentException("등록된 회원 정보가 없습니다.");
+        }
+
+        try {
+            bufferedReader = new BufferedReader(
+                    new InputStreamReader(new FileInputStream("member.csv"), "EUC-KR"));
+
+            String line;
+
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] memberData = line.split(",");
+
+
+                String id = memberData[0];
+
+                idList.add(id);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return idList;
+    }
 }

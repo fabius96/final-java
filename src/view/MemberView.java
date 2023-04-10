@@ -26,6 +26,11 @@ public class MemberView {
                 case ("2"): // 회원등록
                     System.out.println("ID을 입력해주세요");
                     userInput = scanner.nextLine();
+                    if(memberService.idDuplicateVerification(userInput)){
+                        System.out.println("이미 존재하는 ID입니다.");
+                        System.out.println("다른 ID를 입력해주세요.");
+                        userInput = scanner.nextLine();
+                    }
                     String id = userInput;
 
                     System.out.println("이름을 입력해주세요");

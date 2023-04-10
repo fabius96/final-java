@@ -1,5 +1,6 @@
 package service;
 
+import java.util.ArrayList;
 import java.util.List;
 import domain.Member;
 import util.CSVReader;
@@ -68,5 +69,10 @@ public class MemberService {
     public Member createTemporaryMember(String memberName) {
         Member member = csvReader.getMember(memberName);
         return member;
+    }
+
+    public boolean idDuplicateVerification(String id){
+        ArrayList<String> idList = csvReader.makeIdList();
+        return idList.contains(id);
     }
 }
