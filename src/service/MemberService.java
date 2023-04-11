@@ -71,6 +71,11 @@ public class MemberService {
         return member;
     }
 
+    /**
+     * 회원 존재 확인 메소드
+     * @param id
+     * @return
+     */
     public boolean idDuplicateVerification(String id){
         ArrayList<String> idList = csvReader.makeIdList();
         return idList.contains(id);
