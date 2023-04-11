@@ -76,7 +76,7 @@ public class MemberService {
      * @param id
      * @return
      */
-    public boolean idDuplicateVerification(String id){
+    public boolean isExistId(String id){
         ArrayList<String> idList = csvReader.makeIdList();
         return idList.contains(id);
     }

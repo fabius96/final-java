@@ -26,7 +26,7 @@ public class MemberView {
                 case ("2"): // 회원등록
                     System.out.println("ID을 입력해주세요");
                     userInput = scanner.nextLine();
-                    while(memberService.idDuplicateVerification(userInput)){
+                    while(memberService.isExistId(userInput)){
                         System.out.println("이미 존재하는 ID입니다.");
                         System.out.println("다른 ID를 입력해주세요.");
                         userInput = scanner.nextLine();
@@ -58,7 +58,7 @@ public class MemberView {
                             "--------------------------------------------------------------------------------------------------");
                     System.out.println("정보를 수정할 회원의 ID를 입력해주세요");
                     String originId = scanner.nextLine();
-                    while(!memberService.idDuplicateVerification(originId)){
+                    while(!memberService.isExistId(originId)){
                         System.out.println("존재하지 않는 ID입니다.");
                         System.out.println("다른 ID를 입력해주세요.");
                         originId = scanner.nextLine();
