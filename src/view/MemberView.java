@@ -90,6 +90,11 @@ public class MemberView {
                             "--------------------------------------------------------------------------------------------------");
                     System.out.println("삭제할 회원의 ID을 입력해주세요.");
                     userInput = scanner.nextLine();
+                    while(!memberService.isExistId(userInput)){
+                        System.out.println("존재하지 않는 ID입니다.");
+                        System.out.println("다른 ID를 입력해주세요.");
+                        userInput = scanner.nextLine();
+                    }
                     deletedMember = memberService.createTemporaryMember(userInput);
                     memberService.deleteMember(userInput);
                     break;
